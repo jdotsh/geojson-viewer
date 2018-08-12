@@ -48,9 +48,29 @@ int main(int argc, char *argv[])
     // Import geographic data to a QVariantMap
     QVariantMap modelMap = QGeoJson::importGeoJson(loadDoc);
     qWarning() << "File GeoJSON correclty imported\n";
+    qDebug() << "modelmap" << modelMap;
     QVariantList modelList;
-    modelList.append(modelMap);
 
+    /*
+     *  various nesting test
+     *
+    QVariant polygonList = modelMap.value("data");
+    qDebug() << "polygonList" << polygonList;
+    QVariantList geoPolygonVariantList = (polygonList.value<QVariantList>());
+    QVariantMap correctMap0;
+    QVariantMap correctMap1;
+    QVariantList correctList;
+    correctMap0.insert("data", geoPolygonVariantList.at(0));
+    correctList.append(correctMap0);
+    correctMap1.insert("data", geoPolygonVariantList.at(1));
+    correctList.append(correctMap1);
+
+    modelMap.remove("data");
+    modelMap.insert("data",correctList);
+    */
+
+
+    modelList.append(modelMap);
 
     // Output a file with the QVariantMap structure
 
@@ -68,7 +88,6 @@ int main(int argc, char *argv[])
 
 
     // Show point coordinates
-
     /*
     QList<QGeoCoordinate> coordsValue;
     coordsValue = modelMap.value("data").value<QGeoPath>().path();

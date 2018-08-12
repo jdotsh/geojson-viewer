@@ -29,8 +29,10 @@ DelegateComponent {
             opacity: 0.50
         }
     }
+
+    // MultiPolygon doesn't work
     DelegateChoice {
-        roleValue: "Poly"
+        roleValue: "MultiPolygon"
         delegate: MapItemView {
             model: modelData.data
             delegate: dc

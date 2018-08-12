@@ -30,6 +30,7 @@ DISTFILES += \
     testdata/polygon.json \
     testdata/bike_path.json \
     testdata/curonian-spit-biking.json \
+    testdata/multipoly.json
 
 RESOURCES += \
     qml.qrc
