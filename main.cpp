@@ -69,13 +69,12 @@ int main(int argc, char *argv[])
     modelMap.insert("data",correctList);
     */
 
-
     modelList.append(modelMap);
 
     // Output a file with the QVariantMap structure
 
-    /*
-    QFile saveFile(argv[2]);
+
+    QFile saveFile("/home/jdotsh/Projects/geojson_viewer/testdata/out_map.txt");
     if (!saveFile.open(QIODevice::WriteOnly)) {
         qWarning() << "Couldn't open to write";
         return -3;
@@ -84,7 +83,6 @@ int main(int argc, char *argv[])
     QTextStream out(&saveFile);
     out << QGeoJsonPrettyPrint(prettyfied);
     saveFile.close();
-    */
 
 
     // Show point coordinates

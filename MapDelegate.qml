@@ -10,7 +10,7 @@ DelegateComponent {
         roleValue: "Point"
         delegate: MapCircle {
             geoShape: modelData.data
-            radius: 100
+            radius: 100000
             color: "red"
         }
     }
@@ -19,6 +19,7 @@ DelegateComponent {
         delegate: MapPolyline {
             geoShape: modelData.data
             line.color: "black"
+            line.width: 1
         }
     }
     DelegateChoice {
@@ -29,8 +30,20 @@ DelegateComponent {
             opacity: 0.50
         }
     }
-
-    // MultiPolygon doesn't work
+    DelegateChoice {
+        roleValue: "MultiPoint"
+        delegate: MapItemView {
+            model: modelData.data
+            delegate: dc
+        }
+    }
+    DelegateChoice {
+        roleValue: "MultiLinestring"
+        delegate: MapItemView {
+            model: modelData.data
+            delegate: dc
+        }
+    }
     DelegateChoice {
         roleValue: "MultiPolygon"
         delegate: MapItemView {
