@@ -9,7 +9,7 @@ DelegateComponent {
     DelegateChoice {
         roleValue: "Point"
         delegate: MapCircle {
-            geoShape: modelData.data
+            geoShape: QtPositioning.circle(QtPositioning.shapeToCircle(modelDatadata).center, 100000)
             radius: 100000
             color: "red"
         }
@@ -38,7 +38,7 @@ DelegateComponent {
         }
     }
     DelegateChoice {
-        roleValue: "MultiLinestring"
+        roleValue: "MultiLineString"
         delegate: MapItemView {
             model: modelData.data
             delegate: dc
@@ -46,6 +46,27 @@ DelegateComponent {
     }
     DelegateChoice {
         roleValue: "MultiPolygon"
+        delegate: MapItemView {
+            model: modelData.data
+            delegate: dc
+        }
+    }
+    DelegateChoice {
+        roleValue: "GeometryCollection"
+        delegate: MapItemView {
+            model: modelData.data
+            delegate: dc
+        }
+    }
+    DelegateChoice {
+        roleValue: "Feature"
+        delegate: MapItemView {
+            model: modelData.data
+            delegate: dc
+        }
+    }
+    DelegateChoice {
+        roleValue: "FeatureCollection"
         delegate: MapItemView {
             model: modelData.data
             delegate: dc

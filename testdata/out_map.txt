@@ -1,13 +1,4 @@
 {
-    "data": [
-        {
-            "data": null,
-            "type": "Polygon"
-        },
-        {
-            "data": null,
-            "type": "Polygon"
-        }
-    ],
-    "type": "MultiPolygon"
+    "data": null,
+    "type": "Point"
 }

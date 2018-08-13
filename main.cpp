@@ -72,8 +72,6 @@ int main(int argc, char *argv[])
     modelList.append(modelMap);
 
     // Output a file with the QVariantMap structure
-
-
     QFile saveFile("/home/jdotsh/Projects/geojson_viewer/testdata/out_map.txt");
     if (!saveFile.open(QIODevice::WriteOnly)) {
         qWarning() << "Couldn't open to write";
